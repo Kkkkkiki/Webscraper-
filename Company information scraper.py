@@ -19,8 +19,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Configuration
-LLM_MODEL = "llama3.1:70b" #qianwen and deepseek
-LLM_URL = "http://192.168.1.69:11434/api/generate"
+LLM_MODEL = "llama3.1:70b" #Can replace with Qwen, Deepseek for chinese websites
+LLM_URL = #Own API here
 LLM_TIMEOUT = 300
 
 # Keywords for link detection
