@@ -32,23 +32,7 @@ cd webscraper
 pip install -r requirements.txt
 ```
 
-3. **Set up Ollama:**
-```bash
-# Install Ollama (macOS/Linux)
-curl -fsSL https://ollama.ai/install.sh | sh
-
-# Pull the Llama model
-ollama pull llama3.1:70b
-
-# Start Ollama server
-ollama serve
-```
-
-4. **Configure settings:**
-```python
-# Update these settings in the script:
-LLM_MODEL = "llama3.1:70b"
-LLM_URL = "http://192.168.1.69:11434/api/generate"  # Update to your Ollama server
+3. **Set up Ollama and your own API**
 ```
 
 ## 📁 Project Structure
@@ -116,25 +100,6 @@ GOOGL,https://alphabet.com
 ```
 
 The system auto-detects column names containing: `ticker`, `symbol`, `code` for identifiers and `url`, `link`, `website` for URLs.
-
-## ⚙️ Configuration
-
-### Core Settings
-
-```python
-# LLM Configuration
-LLM_MODEL = "llama3.1:70b"           # Ollama model
-LLM_URL = "http://localhost:11434/api/generate"  # Ollama API endpoint
-LLM_TIMEOUT = 300                    # Request timeout
-
-# Scraping Timeouts
-page_timeout = 25000                 # Page load timeout (ms)
-delay_before_return = 1.5            # Wait before content extraction
-total_timeout = 120                  # Per-company timeout (seconds)
-
-# Rate Limiting
-await asyncio.sleep(1.5)             # Delay between companies
-```
 
 ### Language Detection
 
