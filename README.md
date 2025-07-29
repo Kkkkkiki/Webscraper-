@@ -1,6 +1,7 @@
 # Company Information WebScraper
 
-An advanced web scraping system that extracts comprehensive company information from corporate websites using AI-powered content analysis. Built with Python, featuring async processing, multi-language support, and LLM integration for intelligent data extraction.
+Herro! 
+This is an advanced web scraping system that extracts comprehensive company information from corporate websites using AI-powered content analysis. Built with Python, featuring async processing, multi-language support, and LLM integration for intelligent data extraction.
 
 ## 🚀 Key Features
 
@@ -146,39 +147,6 @@ The system automatically:
 }
 ```
 
-## 🔧 Advanced Features
-
-### Smart Link Discovery
-
-The system uses intelligent keyword scoring to find relevant pages:
-
-```python
-# English keywords
-KEYWORDS_EN = {
-    "about": ["about", "company", "overview", "who-we-are", "profile"],
-    "products": ["product", "service", "solution", "offering", "portfolio"]
-}
-
-# Chinese keywords  
-KEYWORDS_CN = {
-    "about": ["关于", "公司", "概述", "我们", "简介"],
-    "products": ["产品", "服务", "解决方案", "业务"]
-}
-```
-
-### Fallback Mechanisms
-
-- **Primary**: crawl4ai with JavaScript rendering
-- **Fallback**: requests + BeautifulSoup for static content
-- **Error Recovery**: Continues processing other companies on individual failures
-
-### Progress Tracking
-
-```bash
-INFO - Progress: 15/50 | Avg: 23.4s | ETA: 13.7min
-INFO - ✅ AAPL: Apple Inc. (18.2s)
-INFO - ❌ BADURL: Invalid URL format
-```
 
 ## 📈 Performance Optimizations
 
@@ -187,34 +155,6 @@ INFO - ❌ BADURL: Invalid URL format
 - **Content Sampling**: Uses 15KB samples for LLM analysis
 - **Rate Limiting**: Respectful 1.5s delays between requests
 - **Progress Saving**: Auto-saves every 5 companies
-
-## 🛡️ Ethical Considerations
-
-- **Rate Limiting**: Built-in delays to avoid overwhelming servers
-- **Respectful Scraping**: Uses appropriate user agents and headers
-- **Error Handling**: Graceful handling of blocked or restricted content
-- **Language Respect**: Attempts to use English versions when available
-
-## 🧪 Testing
-
-Test individual components:
-
-```python
-# Test LLM extraction
-from Company_information_scraper import OptimizedLLMExtractor
-
-llm = OptimizedLLMExtractor()
-content = "Your test content here..."
-prompt = llm.create_comprehensive_prompt(content, "https://test.com", "english")
-result = llm.query_llm_optimized(prompt)
-
-# Test fast scraping
-from Company_information_scraper import FastScraper
-
-scraper = FastScraper()
-site_info = await scraper.analyze_site_fast("https://example.com")
-success, content = await scraper.scrape_content_fast("https://example.com")
-```
 
 ## 📝 Output Files
 
